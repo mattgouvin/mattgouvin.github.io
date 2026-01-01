@@ -75,7 +75,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-blue-50 to-cyan-50 overflow-hidden">
+    <section id="skills" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary-200/20 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl" />

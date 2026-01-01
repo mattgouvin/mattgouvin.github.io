@@ -106,7 +106,6 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ x: 10, transition: { type: 'spring', stiffness: 300 } }}
                 className="group relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-primary-300 transition-all duration-300 overflow-hidden"
               >
                 {/* Gradient overlay on hover */}
@@ -131,16 +130,6 @@ const About = () => {
                     </p>
                   </div>
 
-                  {/* Arrow icon */}
-                  <motion.div
-                    className="flex-shrink-0 text-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ x: -10 }}
-                    whileHover={{ x: 0 }}
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </motion.div>
                 </div>
               </motion.div>
             ))}

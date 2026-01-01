@@ -5,7 +5,6 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Education from './components/Education';
-import Projects from './components/Projects';
 import Footer from './components/Footer';
 
 function App() {
@@ -104,16 +103,7 @@ function App() {
         <Education />
       </motion.div>
 
-      {/* Projects Section */}
-      <motion.div
-        initial="hidden"
-        animate={isVisible.projects ? 'visible' : 'hidden'}
-        variants={sectionVariants}
-      >
-        <Projects />
-      </motion.div>
-
-      {/* Skills Section */}
+{/* Skills Section */}
       <motion.div
         initial="hidden"
         animate={isVisible.skills ? 'visible' : 'hidden'}
