@@ -35,11 +35,11 @@ const About = () => {
   
 
   return (
-    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 overflow-hidden">
+    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-float" />
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-10 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl " />
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl " style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="relative max-w-6xl mx-auto">
@@ -52,10 +52,11 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-display font-bold">
-            <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-blue-600">
               About Me
             </span>
           </h2>
+          <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full" />
         </motion.div>
 
         {/* Main content grid */}
@@ -70,23 +71,23 @@ const About = () => {
           >
             <div className="prose prose-lg max-w-none space-y-6">
               <motion.p
-                className="text-gray-700 leading-relaxed"
+                className="text-gray-700 leading-relaxed text-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                I'm a <span className="font-semibold text-primary-600">software engineer at Amazon Web Services</span> building scalable backend systems, developing tooling that improves team productivity, and helping engineers adopt modern <span className="font-semibold text-primary-600">AI-native software development practices</span>. My work spans customer-facing features and internal tools that enable teams to work more effectively.
+                I'm a <span className="font-semibold text-blue-600">software engineer at Amazon Web Services</span> building scalable backend systems, developing tooling that improves team productivity, and helping engineers adopt modern <span className="font-semibold text-blue-600">AI-native software development practices</span>. My work spans customer-facing features and internal tools that enable teams to work more effectively.
               </motion.p>
 
               <motion.p
-                className="text-gray-700 leading-relaxed"
+                className="text-gray-700 leading-relaxed text-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                With a <span className="font-semibold text-primary-600">B.S. in Computer Science</span> from George Washington University, I bring full-stack expertise to solving technical challenges. I thrive in collaborative environments where I can solve complex problems, mentor teammates, and create practical solutions that deliver value.
+                With a <span className="font-semibold text-blue-600">B.S. in Computer Science</span> from George Washington University, I bring full-stack expertise to solving technical challenges. I thrive in collaborative environments where I can solve complex problems, mentor teammates, and create practical solutions that deliver value.
               </motion.p>
             </div>
           </motion.div>
@@ -106,26 +107,27 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-primary-300 transition-all duration-300 overflow-hidden"
+                whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300 } }}
+                className="group relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-blue-300 transition-all duration-300 overflow-hidden"
               >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Gradient glow on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative flex items-start gap-4">
                   {/* Icon */}
                   <motion.div
-                    className="flex-shrink-0 p-3 bg-gradient-to-br from-primary-500 to-blue-600 text-white rounded-xl shadow-md"
-                    whileHover={{ rotate: [0, -10, 10, -10, 0], transition: { duration: 0.5 } }}
+                    className="flex-shrink-0 p-3 bg-gradient-to-br from-blue-500 to-blue-500 text-white rounded-xl shadow-lg shadow-blue-500/25"
+                    whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                   >
                     {highlight.icon}
                   </motion.div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
                       {highlight.title}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
                       {highlight.description}
                     </p>
                   </div>

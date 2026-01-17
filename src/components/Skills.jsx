@@ -13,8 +13,8 @@ const Skills = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      gradient: 'from-blue-500 to-cyan-500',
-      bgGradient: 'from-blue-50 to-cyan-50',
+      gradient: 'from-blue-500 to-blue-500',
+      bgGradient: 'from-blue-50 to-blue-50',
     },
     {
       title: 'Server-Side',
@@ -24,8 +24,8 @@ const Skills = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
         </svg>
       ),
-      gradient: 'from-purple-500 to-pink-500',
-      bgGradient: 'from-purple-50 to-pink-50',
+      gradient: 'from-blue-500 to-pink-500',
+      bgGradient: 'from-blue-50 to-pink-50',
     },
     {
       title: 'DevOps',
@@ -90,10 +90,11 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-display font-bold">
-            <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-blue-600">
               Skills
             </span>
           </h2>
+          <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full" />
         </motion.div>
 
         {/* Skills grid with stagger animation */}

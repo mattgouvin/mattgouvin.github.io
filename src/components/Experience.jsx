@@ -108,17 +108,18 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-display font-bold">
-            <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-blue-600">
               Experience
             </span>
           </h2>
+          <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full" />
         </motion.div>
 
         {/* Interactive Timeline */}
         <div className="relative pl-8">
           {/* Animated vertical line */}
           <motion.div
-            className="absolute left-3 top-0 w-1 bg-gradient-to-b from-primary-400 via-primary-500 to-blue-600 rounded-full"
+            className="absolute left-3 top-0 w-1 bg-gradient-to-b from-blue-500 via-blue-500 to-blue-500 rounded-full"
             initial={{ height: 0 }}
             whileInView={{ height: '100%' }}
             viewport={{ once: true }}
@@ -136,7 +137,7 @@ const Experience = () => {
             >
               {/* Timeline dot */}
               <motion.div
-                className="absolute left-0 top-6 w-6 h-6 rounded-full border-4 border-white bg-gradient-to-r from-primary-600 to-blue-600 z-10 shadow-lg"
+                className="absolute left-0 top-6 w-6 h-6 rounded-full border-4 border-white bg-gradient-to-r from-blue-500 to-blue-500 z-10 shadow-lg shadow-blue-500/25"
                 whileHover={{ scale: 1.3 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               />
@@ -144,8 +145,8 @@ const Experience = () => {
               {/* Content card */}
               <div className="ml-10">
                 <motion.div
-                  className="bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-6 transition-all duration-300"
-                  whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(59, 130, 246, 0.15)' }}
+                  className="bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-6 transition-all duration-300 hover:border-blue-300"
+                  whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(139, 92, 246, 0.15)' }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   {/* Company header */}
@@ -155,15 +156,15 @@ const Experience = () => {
                         {exp.company}
                       </h3>
                       {/* Company-level date badge */}
-                      <div className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-primary-50 to-blue-50 border-2 border-primary-200 rounded-lg">
+                      <div className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-50 border-2 border-blue-200 rounded-lg">
                         <div className="flex items-center gap-2">
-                          <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                           </svg>
-                          <span className="text-sm font-semibold text-primary-700">{formatDate(exp.startDate)} - {formatDate(exp.endDate)}</span>
+                          <span className="text-sm font-semibold text-blue-700">{formatDate(exp.startDate)} - {formatDate(exp.endDate)}</span>
                         </div>
-                        <div className="hidden sm:block w-px h-5 bg-primary-300" />
-                        <span className="text-sm font-medium text-primary-600 whitespace-nowrap">{calculateDuration(exp.startDate, exp.endDate)}</span>
+                        <div className="hidden sm:block w-px h-5 bg-blue-300" />
+                        <span className="text-sm font-medium text-blue-600 whitespace-nowrap">{calculateDuration(exp.startDate, exp.endDate)}</span>
                       </div>
                     </div>
 
@@ -172,11 +173,11 @@ const Experience = () => {
                       {exp.roles.map((role, roleIdx) => (
                         <div
                           key={roleIdx}
-                          className={`${exp.roles.length > 1 ? 'relative pl-6 border-l-2 border-primary-200' : ''} ${roleIdx > 0 ? 'pt-4' : ''}`}
+                          className={`${exp.roles.length > 1 ? 'relative pl-6 border-l-2 border-blue-200' : ''} ${roleIdx > 0 ? 'pt-4' : ''}`}
                         >
                           {/* Timeline dot for multiple roles */}
                           {exp.roles.length > 1 && (
-                            <div className="absolute left-0 top-2 w-3 h-3 -translate-x-[7px] bg-primary-500 rounded-full ring-2 ring-white"></div>
+                            <div className="absolute left-0 top-2 w-3 h-3 -translate-x-[7px] bg-blue-500 rounded-full ring-2 ring-white"></div>
                           )}
 
                           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
@@ -186,7 +187,7 @@ const Experience = () => {
                                   {role.title}
                                 </h4>
                                 {role.isCurrent && (
-                                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-white bg-gradient-to-r from-primary-600 to-blue-600 px-3 py-1 rounded-full shadow-sm">
+                                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-500 px-3 py-1 rounded-full shadow-sm shadow-blue-500/25">
                                     <span className="relative flex h-2 w-2">
                                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                                       <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>

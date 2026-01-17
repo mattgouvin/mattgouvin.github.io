@@ -51,14 +51,43 @@ function App() {
     };
   }, []);
 
+  // Smoother custom easing
+  const smoothEase = [0.6, 0.01, 0.05, 0.95];
+
   const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: 'easeOut',
+        duration: 1,
+        ease: smoothEase,
+      },
+    },
+  };
+
+  // Slide from right variant for Skills
+  const slideRightVariants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: smoothEase,
+      },
+    },
+  };
+
+  // Slide from left variant for Experience
+  const slideLeftVariants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: smoothEase,
       },
     },
   };
@@ -66,9 +95,10 @@ function App() {
   return (
     <div className="App relative">
 
+
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-primary-600 to-blue-600 z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-500 to-blue-500 z-50 origin-left"
         style={{ scaleX: scrollProgress / 100 }}
         initial={{ scaleX: 0 }}
       />
@@ -89,7 +119,7 @@ function App() {
       <motion.div
         initial="hidden"
         animate={isVisible.experience ? 'visible' : 'hidden'}
-        variants={sectionVariants}
+        variants={slideLeftVariants}
       >
         <Experience />
       </motion.div>
@@ -103,11 +133,11 @@ function App() {
         <Education />
       </motion.div>
 
-{/* Skills Section */}
+      {/* Skills Section */}
       <motion.div
         initial="hidden"
         animate={isVisible.skills ? 'visible' : 'hidden'}
-        variants={sectionVariants}
+        variants={slideRightVariants}
       >
         <Skills />
       </motion.div>
@@ -123,7 +153,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-primary-600 to-blue-600 text-white rounded-full shadow-2xl z-40 hover:shadow-primary-500/50 transition-shadow duration-300"
+            className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-full shadow-2xl shadow-blue-500/25 z-40 hover:shadow-blue-500/50 transition-shadow duration-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >

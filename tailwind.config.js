@@ -19,10 +19,9 @@ module.exports = {
           900: '#1e3a8a',
         },
         accent: {
-          purple: '#a78bfa',
-          pink: '#f472b6',
           cyan: '#22d3ee',
           lime: '#a3e635',
+          amber: '#f59e0b',
         },
       },
       fontFamily: {
@@ -68,8 +67,8 @@ module.exports = {
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(167, 139, 250, 0.3)' },
+          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.4)' },
+          '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3)' },
         },
         gradientShift: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
