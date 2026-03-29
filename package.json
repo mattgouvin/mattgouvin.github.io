@@ -40,7 +40,6 @@
     "qs": ">=6.14.2",
     "lodash": ">=4.17.23",
     "jsonpath": ">=1.3.0",
-    "ajv": ">=8.18.0",
     "minimatch": ">=5.1.8",
     "rollup": ">=2.80.0",
     "serialize-javascript": ">=7.0.5",
