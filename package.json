@@ -45,7 +45,7 @@
     "serialize-javascript": ">=7.0.5",
     "underscore": ">=1.13.8",
     "@tootallnate/once": ">=3.0.1",
-    "svgo": ">=2.8.1",
+    "svgo": "4.0.2",
     "flatted": ">=3.4.2",
     "picomatch": ">=4.0.4",
     "yaml": ">=2.8.3",
