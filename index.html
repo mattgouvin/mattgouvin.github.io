@@ -1,0 +1,28 @@
+---
+layout: base
+title: Matt Gouvin
+---
+
+<div class="home">
+  <section>
+    <h1>Matt Gouvin</h1>
+    <p class="motto">Build. Lead. Write.</p>
+    <p class="bio">SWE at AWS in New York. I build distributed systems and help lead a team of engineers. I write to think, to learn, and to share ideas.</p>
+  </section>
+
+  {% if site.posts.size > 0 %}
+  <section>
+    <h2>Recent Writing</h2>
+    <div class="items">
+      {% for post in site.posts limit:5 %}
+      <div>
+        <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+        <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        <p class="post-desc">{{ post.content | strip_html | truncatewords: 18 }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="/writing" class="view-all">View all posts →</a>
+  </section>
+  {% endif %}
+</div>
