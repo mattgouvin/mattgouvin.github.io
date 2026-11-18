@@ -1,0 +1,19 @@
+name: Matt Gouvin
+title: Matt Gouvin
+description: Software Development Engineer II at AWS
+author: Matt Gouvin
+url: "https://mattgouvin.github.io"
+permalink: /writing/:title
+
+markdown: kramdown
+encoding: utf-8
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
